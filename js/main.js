@@ -1,7 +1,7 @@
 var App = {
 	clientId: 'XXXXX', // Foursquare Client ID
 	clientSecret: 'XXXXX', // Foursquare Client Secret
-	categoryId: 'XXXXX', // Foursquare Category ID
+	categoryId: '4cce455aebf7b749d5e191f5', // Foursquare Category ID
 	appId: 'XXXXX', // Facebook App ID
 	init: function() {
 		App.apiUrl = 'https://api.foursquare.com/v2/venues/search?client_id=' + App.clientId + '&client_secret=' + App.clientSecret + '&v=' + App.getDate() + '&';
