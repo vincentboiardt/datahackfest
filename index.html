@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Football</title>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB1ALG2MFjGH0p-IqoFKBTNhrI2P0ZqMis&sensor=false"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/add2home.css">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div id="wrapper">
+	<div id="map"></div>
+	<div id="panel-wrap">
+		<div id="panel">
+			<div id="intro">
+				<h1>Play Football</h1>
+				<p class="alert alert-info">Prototype created at <a href="http://www.hyperisland.com/news/we-re-throwing-a-data-hack-fest" target="_blank">#datahackfest</a></p>
+				<ul>
+					<li>See your local soccer fields. See who's playing and when!</li>
+					<li>Create a game by signing in with Facebook, the site will divide the teams for you</li>
+					<li>See which games have un-even teams and join their game</li>
+					<li>Works on any device! Use it on your iPhone, iPad or Android device</li>
+				</ul>
+				<p><strong>Team members:</strong><br>
+				<a href="http://twitter.com/vincentboiardt">@vincentboiardt</a><br>
+				<a href="http://twitter.com/joellundblad">@joellundblad</a><br>
+				<a href="http://twitter.com/andreasjd">@andreasjd</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="create-event">
+	<h1>Create a game</h1>
+	<p>Logga in med Facebook för att skapa ett event, och bjud in dina vänner.</p>
+	<a href="#" class="login btn btn-primary btn-large">Logga in med Facebook</a>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tmpl.min.js"></script>
+<script src="js/main.js"></script>
+<script id="tmpl" type="text/x-jquery-tmpl">
+    <h1>${name}</h1>
+	<dl>
+		<dt><i class="icon-heart"></i> Likes</dd>
+		<dd>${likes.count}</dd>
+		<dt><i class="icon-map-marker"></i> Check-ins</dd>
+		<dd>${stats.checkinsCount}</dd>
+		<dt><i class="icon-user"></i> Players that have checked in</dd>
+		<dd>${stats.usersCount}</dd>
+		<dt><i class="icon-user"></i> Here right now</dd>
+		<dd>${hereNow.count}</dd>
+	</dl>
+	<div class="actions btn-group btn-group-vertical btn-block">
+		<a href="#" class="play btn btn-large">Create a game</a>
+		<a href="#" class="btn btn-large">Join a game</a>
+	</div>
+	<div class="upcoming">
+		<h2>Upcoming games</h2>
+		<table class="games table table-striped">
+			<tr>
+				<td><i class="icon-time"></i> Today 15.00</td>
+				<td>Returmatch!</td>
+				<td><span class="badge">5</span></td>
+			</tr>
+			<tr>
+				<td><i class="icon-time"></i> Tomorrow 12.00</td>
+				<td>Fredagsfotboll</td>
+				<td><span class="badge">5</span></td>
+			</tr>
+			<tr>
+				<td><i class="icon-time"></i> 8 aug 12.00</td>
+				<td>NU KÖR VI</td>
+				<td><span class="badge">3</span></td>
+			</tr>
+			<tr>
+				<td colspan="3"><a href="#">See more..</a></td>
+			</tr>
+		</table>
+	</div>
+	<div class="previous">
+		<h2>Previous games</h2>
+		<table class="games table table-striped">
+			<tr>
+				<td><i class="icon-time"></i> Yesterday 15.00</td>
+				<td>Returmatch!</td>
+				<td><span class="badge">5</span></td>
+			</tr>
+			<tr>
+				<td><i class="icon-time"></i> 3 aug 12.00</td>
+				<td>Fredagsfotboll</td>
+				<td><span class="badge">5</span></td>
+			</tr>
+			<tr>
+				<td><i class="icon-time"></i> 2 aug 12.00</td>
+				<td>NU KÖR VI</td>
+				<td><span class="badge">3</span></td>
+			</tr>
+			<tr>
+				<td><i class="icon-time"></i> 1 aug 20.00</td>
+				<td>Kvällslir</td>
+				<td><span class="badge">11</span></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="btn-group btn-group-vertical btn-block">
+		<a href="#" class="btn btn-large"><i class="icon-star"></i> Save to favorites</a>
+		<a href="#" class="btn btn-large"><i class="icon-plus"></i> Add a soccer field</a>
+		<a href="#" class="btn"><i class="icon-exclamation-sign"></i> Report</a>
+	</div>
+</script>
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = App.fbInit;
+(function(d){
+var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+if (d.getElementById(id)) {return;}
+js = d.createElement('script'); js.id = id; js.async = true;
+js.src = "//connect.facebook.net/en_US/all.js";
+ref.parentNode.insertBefore(js, ref);
+}(document));
+</script>
+<script type="text/javascript">
+var addToHomeConfig = {
+	touchIcon: true,
+	animationIn: 'fade'
+};
+</script>
+<script src="js/add2home.js"></script>
+</body>
+</html>

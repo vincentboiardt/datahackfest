@@ -1,0 +1,336 @@
+@import "bootstrap.min.css";
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+/**/
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol,
+ul {
+  list-style: none;
+}
+b,
+strong {
+  font-weight: bold;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+blockquote,
+q {
+  quotes: "" "";
+}
+/* Basic */
+.structural {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+.clear:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clear {
+  display: inline-block;
+  clear: both;
+}
+/* Hides from IE-mac \*/
+* html .clear {
+  height: 1%;
+}
+.clear {
+  display: block;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font: 0.625em/1.5 Arial, Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* Type */
+h1 {
+  font: 2.6em/1 Arial, Helvetica, sans-serif;
+  color: #003333;
+  padding: 0 0 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  margin: 0 0 20px;
+}
+h2 {
+  font: 16px/2 Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-align: center;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 10px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #006666;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #006666), color-stop(1, #009999));
+  background: -ms-linear-gradient(bottom, #006666, #009999);
+  background: -moz-linear-gradient(center bottom, #006666 0%, #009999 100%);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  border: 1px solid #007070;
+}
+p {
+  font-size: 1.6em;
+  margin: 0 0 1.5em;
+}
+dl {
+  font-size: 1.6em;
+}
+dt {
+  float: left;
+  margin: 0 5px 0 0;
+  font-weight: bold;
+}
+dt:after {
+  content: ":";
+}
+ul {
+  list-style: disc;
+  font-size: 1.6em;
+  margin: 0 0 1.5em 25px;
+}
+li {
+  margin: 0 0 1em;
+}
+dd {
+  margin: 0 0 15px;
+}
+/* Game List */
+.actions {
+  margin: 0 0 20px;
+}
+.games {
+  font-size: 1.4em;
+  background: #fff;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.previous {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  padding-top: 20px;
+}
+/* Create Event */
+#create-event {
+  display: none;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  padding: 50px;
+  background: #fff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+/* Layout */
+#wrapper {
+  height: 100%;
+}
+#map {
+  height: 55%;
+}
+#panel-wrap {
+  height: 45%;
+  overflow: auto;
+  color: #333;
+  background: #ABC6D1;
+  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+#panel {
+  padding: 20px;
+}
+@media (min-width: 640px) {
+  #map {
+    float: left;
+    width: 60%;
+    height: 100%;
+  }
+  #panel-wrap {
+    float: left;
+    width: 40%;
+    height: 100%;
+    -webkit-box-shadow: inset 5px 0 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 5px 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 5px 0 10px rgba(0, 0, 0, 0.3);
+  }
+}

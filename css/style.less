@@ -1,0 +1,148 @@
+@import "elements.less";
+@import "basic.less";
+@import "bootstrap.min.css";
+
+@color: #099;
+@button: #f00;
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	font: 0.625em/1.5 Arial, Helvetica, sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	 -khtml-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* Type */
+
+h1 {
+	font: 2.6em/1 Arial, Helvetica, sans-serif;
+	color: darken(@color, 20%);
+	padding: 0 0 10px;
+	border-bottom: 2px solid rgba(0,0,0,.3);
+	margin: 0 0 20px;
+}
+
+h2 {
+	font: 16px/2 Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-align: center;
+	.border-radius( 10px, 0, 0, 10px );
+	.gradient( darken(@color, 10%), darken(@color, 10%), @color );
+	.box-shadow( inset 0 1px rgba(255,255,255,.2);
+	border: 1px solid darken(@color, 8%);
+}
+
+p {
+	font-size: 1.6em;
+	margin: 0 0 1.5em;
+}
+
+dl {
+	font-size: 1.6em;
+}
+
+dt {
+	float: left;
+	margin: 0 5px 0 0;
+	font-weight: bold;
+	
+	&:after {
+		content: ":";
+	}
+}
+
+ul {
+	list-style: disc;
+	font-size: 1.6em;
+	margin: 0 0 1.5em 25px;
+}
+
+li {
+	margin: 0 0 1em;
+}
+
+dd {
+	margin: 0 0 15px;
+}
+
+/* Game List */
+
+.actions {
+	margin: 0 0 20px;
+}
+
+.games {
+	font-size: 1.4em;
+	background: #fff;
+	.border-radius( 0, 10px, 10px );
+}
+
+.previous {
+	border-top: 1px solid rgba(0,0,0,.3);
+	padding-top: 20px;
+}
+
+/* Create Event */
+
+#create-event {
+	display: none;
+	position: absolute;
+	top: 5%;
+	bottom: 5%;
+	left: 5%;
+	right: 5%;
+	padding: 50px;
+	background: #fff;
+	.rounded(20px);
+	.box-shadow(0 0 10px rgba(0,0,0,.5);
+	z-index: 10;
+}
+	
+/* Layout */
+
+#wrapper {
+	height: 100%;
+}
+
+#map {
+	height: 55%;
+}
+	
+#panel-wrap {
+	height: 45%;
+	overflow: auto;
+	color: #333;
+	background: #ABC6D1;
+	.box-shadow( inset 0 5px 10px rgba(0,0,0,.3) );
+}
+
+#panel {
+	padding: 20px;
+}
+
+@media (min-width: 640px ) {
+	#map {
+		float: left;
+		width: 60%;
+		height: 100%;
+	}
+	
+	#panel-wrap {	
+		float: left;
+		width: 40%;
+		height: 100%;
+		.box-shadow( inset 5px 0 10px rgba(0,0,0,.3) );
+	}
+}
